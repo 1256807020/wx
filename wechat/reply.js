@@ -58,7 +58,6 @@ exports.reply = async (ctx, next) => {
     let reply = ''
     if (message.Event === 'subscribe') {
       reply = '欢迎订阅' + '！ '
-      
       if (message.EventKey && message.ticket) {
         reply += '扫码参数是：' + message.EventKey + '_' + message.ticket
       } else {

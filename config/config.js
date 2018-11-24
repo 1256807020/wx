@@ -10,4 +10,3 @@ module.exports = {
   baseUrl: 'http://koawx.free.idcfengye.com/'
   // https://wechat7online.iblack7.com/wx
 }
-

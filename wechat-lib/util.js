@@ -4,7 +4,7 @@ const sha1 = require('sha1')
 
 exports.parseXML = xml => {
   return new Promise((resolve, reject) => {
-    xml2js.parseString(xml, {trim: true}, (err, content) => {
+    xml2js.parseString(xml, { trim: true }, (err, content) => {
       if (err) reject(err)
       else resolve(content)
     })

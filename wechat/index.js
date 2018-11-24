@@ -19,7 +19,7 @@ const wechatCfg = {
       const res = await Token.saveAccessToken(data)
 
       return res
-    },
+    }
   }
 }
 
