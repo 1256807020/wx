@@ -1,0 +1,331 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+.top {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background: url(../images/top.jpg) no-repeat center 20%;
+  background-size: cover;
+}
+.navbar {
+  border-bottom: 2px solid #CC2222;
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+#leader_hide {
+  float: none;
+}
+#leader_hide span {
+  background: #505050;
+  height: 3px;
+}
+#leader_list {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: -2px;
+}
+#leader_list li {
+  float: none;
+  display: inline-block;
+}
+#leader_list li a {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #525252;
+  font-size: 15px;
+  line-height: 25px;
+}
+#leader_list li a:hover {
+  background: white;
+  color: #e47e30;
+}
+#leader_list li a.shouye {
+  border-bottom: 2px solid #e47e30;
+}
+@media (max-width: 768px) {
+  #leader_list li {
+    display: block;
+    text-align: left;
+  }
+}
+#content {
+  background: #ebebeb;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+#content main article {
+  background: white;
+  width: 100%;
+  padding: 10px 35px;
+  margin-bottom: 35px;
+}
+#content main article h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+}
+#content main article h1 a {
+  color: #303030;
+}
+#content main article h1 a:hover {
+  text-decoration: none;
+}
+#content main article .info {
+  width: 100%;
+  text-align: center;
+  color: #959595;
+}
+#content main article .info a {
+  color: #e47e30;
+}
+#content main article .arti {
+  width: 100%;
+}
+#content main article .arti p {
+  color: #444443;
+  font-size: 18px;
+}
+#content main article .read {
+  width: 100%;
+}
+#content main article .read a {
+  background: #e47e30;
+  color: white;
+  border: 1px solid #e47e30;
+}
+#content main article .read a:hover {
+  background: #303030;
+  border: 1px solid #303030;
+}
+#content main article footer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid #ebebeb;
+  margin-top: 30px;
+  color: #959595;
+}
+#content main article footer a {
+  color: #959595;
+}
+#content main article footer a:hover {
+  color: #e47e30;
+}
+@media (max-width: 992px) {
+  #content main {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+#content aside .shequ {
+  background: white;
+  width: 100%;
+  padding: 20px 30px;
+}
+#content aside .shequ h3 {
+  margin-top: 0px;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 7px;
+}
+#content aside .shequ h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e47e30;
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+}
+#content aside .shequ p a {
+  color: #e47e30;
+}
+#content aside .download {
+  background: white;
+  width: 100%;
+  padding: 20px 30px;
+  margin-top: 35px;
+}
+#content aside .download h3 {
+  margin-top: 0px;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 7px;
+}
+#content aside .download h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e47e30;
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+}
+#content aside .download p a {
+  width: 100%;
+  background: #e47e30;
+  color: white;
+  border: 1px solid #e47e30;
+}
+#content aside .download p a:hover {
+  background: #303030;
+  border: 1px solid #303030;
+}
+#content aside .tags {
+  background: white;
+  padding: 20px 30px;
+  width: 100%;
+  margin-top: 35px;
+}
+#content aside .tags h3 {
+  margin-top: 0px;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 7px;
+}
+#content aside .tags h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e47e30;
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+}
+#content aside .tags p {
+  width: 100%;
+  overflow: hidden;
+}
+#content aside .tags p a {
+  display: block;
+  float: left;
+  margin: 5px 5px 0px 0px;
+  padding: 5px 10px;
+  color: #959595;
+  border: 1px solid #ebebeb;
+  font-size: 14px;
+}
+#content aside .tags p a:hover {
+  background: #e47e30;
+  color: white;
+  border: 1px solid #e47e30;
+  text-decoration: none;
+}
+.red {
+  background: red;
+}
+.blue {
+  background: #0000ff;
+}
+.green {
+  background: #008000;
+}
+#footer {
+  background: #1e1e1e;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+#footer .foot_news,
+#footer .foot_tags,
+#footer .foot_com {
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 30px;
+}
+#footer .foot_news h3,
+#footer .foot_tags h3,
+#footer .foot_com h3 {
+  margin-bottom: 15px;
+  margin-top: 0px;
+  color: white;
+  position: relative;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #303030;
+}
+#footer .foot_news h3:after,
+#footer .foot_tags h3:after,
+#footer .foot_com h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e47e30;
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+}
+#footer .foot_news p a,
+#footer .foot_tags p a,
+#footer .foot_com p a {
+  white-space: nowrap;
+}
+#footer .foot_news p {
+  border-bottom: 1px dashed #303030;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+#footer .foot_news p a {
+  display: block;
+  color: #959595;
+  line-height: 25px;
+}
+#footer .foot_news p a:hover {
+  color: #e47e30;
+  text-decoration: none;
+}
+#footer .foot_news p span {
+  display: block;
+  color: #505050;
+  line-height: 25px;
+}
+#footer .foot_tags p {
+  width: 100%;
+  overflow: hidden;
+}
+#footer .foot_tags p a {
+  display: block;
+  float: left;
+  margin: 5px 5px 0px 0px;
+  padding: 5px 10px;
+  color: #959595;
+  border: 1px solid #303030;
+  font-size: 14px;
+}
+#footer .foot_tags p a:hover {
+  background: #e47e30;
+  color: white;
+  border: 1px solid #e47e30;
+  text-decoration: none;
+}
+#footer .foot_com p {
+  border-bottom: 1px dashed #303030;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+#footer .foot_com p a {
+  color: #959595;
+  line-height: 25px;
+  padding: 5px;
+  margin-right: 10px;
+}
+#footer .foot_com p a:hover {
+  background: #e47e30;
+  color: white;
+  border: 1px solid #e47e30;
+  text-decoration: none;
+}
+#footer .foot_com p.last {
+  border: none;
+}
+#copyright {
+  background: #CC2222;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  bottom-top: 1px solid #303030;
+}
+#copyright span {
+  color: #fff;
+}
+#copyright span a {
+  color: #fff;
+}

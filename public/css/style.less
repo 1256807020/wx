@@ -1,0 +1,359 @@
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+//全局变量
+@ora:#e47e30;
+//top
+.top{
+	padding-top: 75px;padding-bottom: 75px;
+	background: url(../images/top.jpg) no-repeat center 20%;
+	background-size: cover;
+}
+.navbar{
+	border-bottom: 2px solid #CC2222;
+	border-radius: 0px;margin-bottom: 0px;
+}
+//导航区域
+#leader_hide{
+	float: none;
+    //行内块级元素
+	span{
+		background: #505050;height: 3px;
+	}
+}
+#leader_list{
+	width: 100%;text-align: center;
+	margin: 0 auto;
+	margin-bottom: -2px;
+	li{
+		float:none;
+		display: inline-block;
+		a{
+			padding-left: 20px;padding-right: 20px;
+			color:#525252;
+			font-size: 15px;
+			line-height: 25px;
+			&:hover{
+				background: white;
+				color:@ora ;
+			}
+		}
+		a.shouye{
+			border-bottom: 2px solid @ora;
+		}
+		@media(max-width:768px){
+			display:block;
+			text-align: left;
+
+		}//@media查询，在li下就是给li设置
+	}
+}
+//content部分
+#content{
+	background: #ebebeb;
+	padding-top: 35px;padding-bottom: 35px;
+	//主体的文章部分
+	main{
+		article{
+		background: white;
+		width:100%;
+		padding: 10px 35px;
+		margin-bottom: 35px;
+		//标题部分
+		h1{
+			width: 100%;
+			text-align:center;
+			font-weight: normal;
+			a{
+				color: #303030;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+			
+		}
+		//作者及时间
+		.info{
+			width:100%;
+			text-align:center;
+			color:#959595; 
+			a{
+				color:@ora;
+			}
+		}
+		//内容文章简介
+		.arti{
+			width: 100%;
+			p{
+				color:#444443;
+				font-size: 18px;
+			}
+		}
+		//阅读全文按钮
+		.read{
+			width: 100%;
+			a{
+				background: @ora;color:white;
+				border:1px solid @ora;
+				&:hover{
+					background: #303030;
+					border:1px solid #303030;
+				}
+
+			}
+		}
+		//阅读全文底部
+		footer{
+			padding-top: 25px;
+			padding-bottom: 25px;
+			border-top:1px solid #ebebeb;
+			margin-top: 30px;
+			color: #959595; 
+			a{
+				color: #959595;
+				&:hover{
+					color: @ora;
+				}
+			}
+		}
+	 	}
+	 	@media(max-width:992px){
+	 		padding-left: 0px;
+	 		padding-right: 0px;
+
+	 	}
+	}
+	//右侧的社区部分
+	aside{
+		.shequ{
+			background: white;
+			width: 100%;
+			padding: 20px 30px;
+			h3{
+				margin-top: 0px;
+				position: relative;
+				border-bottom: 1px solid #ebebeb;
+				padding-bottom: 7px;
+				&:after{
+					content: "";
+					width: 90px;height: 1px;
+					background: @ora;
+					position: absolute;
+					left: 0px;bottom:-1px;
+
+				}//确定位置，先给H3一个相对定位relative,因为要插入到H3元素身上，然后再给他的css3属性after元素（在H3元素后插入一个元素）的一个绝对定位
+			}
+			p{
+				a{
+					color:@ora;
+				}
+			}
+		}
+		//下载区
+		.download{
+			background: white;
+			width: 100%;
+			padding:20px 30px;
+			margin-top: 35px;
+			h3{
+				margin-top: 0px;
+				position: relative;
+				border-bottom: 1px solid #ebebeb;
+				padding-bottom: 7px;
+				&:after{
+					content: "";
+					width: 90px;height: 1px;
+					background: @ora;
+					position: absolute;
+					left: 0px;bottom:-1px;
+
+				}//确定位置，先给H3一个相对定位relative,因为要插入到H3元素身上，然后再给他的css3属性after元素（在H3元素后插入一个元素）的一个绝对定位
+			}
+			p{
+				a{
+					width: 100%;
+					background: @ora;
+					color:white;
+					border:1px solid @ora;
+					&:hover{
+						background:#303030;
+						border:1px solid #303030;
+					}
+				}
+			}
+		}
+		//标签云部分
+		.tags{
+			background: white;
+			padding: 20px 30px;
+			width: 100%;
+			margin-top: 35px;
+			h3{
+				margin-top: 0px;
+				position: relative;
+				border-bottom: 1px solid #ebebeb;
+				padding-bottom: 7px;
+				&:after{
+					content: "";
+					width: 90px;height: 1px;
+					background: @ora;
+					position: absolute;
+					left: 0px;bottom:-1px;
+
+				}//确定位置，先给H3一个相对定位relative,因为要插入到H3元素身上，然后再给他的css3属性after元素（在H3元素后插入一个元素）的一个绝对定位
+			}
+			p{
+				width: 100%;overflow:hidden;
+				a{
+					display:block;float:left;
+					margin: 5px 5px 0px 0px;
+					padding: 5px 10px;
+					color: #959595;
+					border:1px solid #ebebeb;
+					font-size: 14px;
+					&:hover{
+						background: @ora;
+						color:white;
+						border:1px solid @ora;
+						text-decoration: none;
+
+					}
+
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+//测试样式
+.red{
+	background: red;
+}
+.blue{
+	background: blue
+}
+.green{
+	background: green
+}
+//footer部分
+#footer{
+	background: #1e1e1e;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	.foot_news,.foot_tags,.foot_com{
+		padding-left: 45px;
+		padding-right: 45px;
+		padding-bottom: 30px;
+
+		h3{
+			margin-bottom: 15px;
+			margin-top: 0px;
+			color:white;
+			position:relative;
+			padding-bottom: 7px;
+			border-bottom: 1px solid #303030;
+			&:after{
+			content:"";//content内容为空
+			width:90px;height:1px;
+			background: @ora;
+			position:absolute;
+			left:0px;bottom:-1px;			
+		}
+		}
+		p{
+			a{
+				white-space:nowrap;//强制不换行
+			}
+		}
+	}
+	//最新文章部分
+	.foot_news{
+		p{
+			border-bottom:1px dashed #303030;
+			padding-top: 5px;
+			padding-bottom: 15px;
+
+			a{
+				display: block;
+				color:#959595;
+				line-height:25px;
+				&:hover{
+					color:@ora;
+					text-decoration: none;
+				}
+			}
+			span{
+				display: block;
+				color:#505050;
+				line-height:25px;
+			}
+		}
+	}
+	//标签云
+	.foot_tags{
+		p{
+			width:100%;overflow: hidden;
+			a{
+				display: block;
+			    float: left;
+			    margin: 5px 5px 0px 0px;
+			    padding: 5px 10px;
+			    color: #959595;
+			    border: 1px solid #303030;
+			    font-size: 14px;
+				&:hover{
+					background: @ora;
+					color:white;
+					border:1px solid @ora;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	//合作伙伴
+	.foot_com{
+		p{
+			border-bottom: 1px dashed #303030;
+			padding-top: 5px;
+			padding-bottom: 15px;
+			a{
+				
+			    color: #959595;
+			    line-height:25px;
+			    padding:5px;
+			    margin-right:10px;
+				&:hover{
+					background: @ora;
+					color:white;
+					border:1px solid @ora;
+					text-decoration:none;
+				}
+			}
+		}
+		p.last{
+			border:none;
+		}
+
+	}
+}
+//版权
+#copyright{
+	background: #CC2222; 
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	bottom-top:1px solid #303030;
+	span{
+		color:#fff;
+		a{
+			color:#fff;
+		}
+	}
+}
