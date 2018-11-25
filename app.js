@@ -2,6 +2,7 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const config = require('./config/config')
 const { resolve } = require('path')
+const bodyParser = require('koa-bodyparser')
 const moment = require('moment')
 const { initSchemas, connect } = require('./app/database/init')
 
