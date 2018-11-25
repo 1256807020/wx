@@ -1,13 +1,12 @@
 const { reply } = require('../../wechat/reply')
 const config = require('../../config/config')
-const { getOAuth } = require('../../wechat/index')
+const api = require('../api/index')
 const wechatMiddle = require('../../wechat-lib/middleware')
 // 接入微信消息中间件
 exports.sdk = async (ctx, next) => {
-  await ctx.render('wechat/sdk', {
-    title: 'sdk',
-    desc: 'test'
-  })
+  const url = ctx.href
+  const params = await api.wechat.getSignature(url)
+  await ctx.render('wechat/sdk', params)
 }
 // 接入微信消息中间件
 exports.hear = async (ctx, next) => {
@@ -16,18 +15,18 @@ exports.hear = async (ctx, next) => {
 }
 
 exports.oauth = async (ctx, next) => {
-  const oauth = getOAuth()
+  // const oauth = getOAuth()
   const target = config.baseUrl + 'userinfo'
   const scope = 'snsapi_userinfo'
   const state = ctx.query.id
-  const url = oauth.getAuthorizeUrl(scope, target, state)
+  const url = api.wechat.getAuthorizeUrl(scope, target, state)
   ctx.redirect(url)
 }
 
 exports.userinfo = async (ctx, next) => {
-  const oauth = getOAuth()
+  // const oauth = getOAuth()
   const code = ctx.query.code
-  const data = await oauth.fetchAccessToken(code)
-  const userData = await oauth.getUserInfo(data.access_token, data.openid)
+  // const data = await api.wechat.fetchAccessToken(code)
+  const userData = await api.wechat.getUserInfo(code)
   ctx.body = userData
 }
