@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const User = mongoose.model('User')
-
+// console.log(User)
 // 1. 实现一个注册页面的控制   showSignup
 exports.showSignup = async (ctx, next) => {
   await ctx.render('pages/signup', {
@@ -22,25 +22,22 @@ exports.signup = async (ctx, next) => {
     password,
     nickname
   } = ctx.request.body.user
-
+  // 先查以前数据库里有没有
   let user = await User.findOne({ email })
-
+  console.log(user)
   if (user) return ctx.redirect('/user/signin')
-
   user = new User({
     email,
     nickname,
     password
   })
-
+  console.log(user)
   ctx.session.user = {
     _id: user._id,
     role: user.role,
     nickname: user.nickname
   }
-
   user = await user.save()
-
   ctx.redirect('/')
 }
 
@@ -49,11 +46,13 @@ exports.signup = async (ctx, next) => {
 exports.signin = async (ctx, next) => {
   const { email, password } = ctx.request.body.user
   const user = await User.findOne({ email })
-
+  console.log(user)
+  // 如果不存在，跳转
   if (!user) return ctx.redirect('/user/signup')
-
+  // 比较用户的密码和数据的密码
   const isMatch = await user.comparePassword(password, user.password)
-
+  console.log('检查是否登陆成功')
+  console.log(isMatch)
   if (isMatch) {
     ctx.session.user = {
       _id: user._id,
@@ -69,7 +68,6 @@ exports.signin = async (ctx, next) => {
 
 exports.logout = async (ctx, next) => {
   ctx.session.user = {}
-
   ctx.redirect('/')
 }
 // 5. 增加路由规则

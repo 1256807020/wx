@@ -42,11 +42,11 @@ const UserSchema = new Schema({
     }
   }
 })
-// 虚拟字段
+// 虚拟字段,不会存到数据库中
 UserSchema.virtual('isLocked').get(function () {
   return !!(this.lockUntil && this.lockUntil > Date.now())
 })
-// 中间件
+// 存储前中间件
 UserSchema.pre('save', function (next) {
   if (this.isNew) {
     this.meta.createdAt = this.meta.updatedAt = Date.now()
@@ -69,15 +69,17 @@ UserSchema.pre('save', function (next) {
 })
 // 静态方法
 UserSchema.methods = {
+  // 用户传过来的密码和数据库的密码
   comparePassword: function (_password, password) {
     return new Promise((resolve, reject) => {
+      // 比对密码
       bcrypt.compare(_password, password, function (err, isMatch) {
         if (!err) resolve(isMatch)
         else reject(err)
       })
     })
   },
-
+  // 自增登陆次数
   incLoginAttempts: function (user) {
     const that = this
     return new Promise((resolve, reject) => {

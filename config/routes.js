@@ -1,13 +1,15 @@
 const Wechat = require('../app/controllers/wechat')
 const User = require('../app/controllers/user')
+const Index = require('../app/controllers/index')
 module.exports = router => {
+  router.get('/', Index.homePage)
   router.get('/sdk', Wechat.sdk)
   // 用户的登陆注册
-  router.get('/user/signup', User.signup)
-  router.get('/user/signin', User.signin)
+  router.get('/user/signup', User.showSignup)
+  router.get('/user/signin', User.showSignin)
   router.post('/user/signup', User.signup)
   router.post('/user/signin', User.signin)
-  router.post('/logout', User.logout)
+  router.get('/logout', User.logout)
   // 进入微信消息中间件
   router.get('/wx-hear', Wechat.hear)
   router.post('/wx-hear', Wechat.hear)
