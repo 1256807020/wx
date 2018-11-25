@@ -15,7 +15,7 @@ exports.connect = (db) => {
     if (process.env.NODE_ENV !== 'production') {
       mongoose.set('debug', false)
     }
-    mongoose.connect(db)
+    mongoose.connect(db, { useNewUrlParser: true })
     mongoose.connection.on('disconnect', () => {
       maxConnectTimes++
 
