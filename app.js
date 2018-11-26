@@ -32,7 +32,6 @@ const { initSchemas, connect } = require('./app/database/init')
 
       if (user && user._id) {
         user = await User.findOne({ _id: user._id })
-
         if (user) {
           ctx.session.user = {
             _id: user._id,

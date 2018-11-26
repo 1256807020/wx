@@ -77,7 +77,6 @@ exports.logout = async (ctx, next) => {
 // 用户列表页面
 exports.list = async (ctx, next) => {
   const users = await User.find({}).sort('meta.updatedAt')
-
   await ctx.render('pages/userlist', {
     title: '用户列表页面',
     users
