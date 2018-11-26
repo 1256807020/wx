@@ -29,7 +29,7 @@ exports.new = async (ctx, next) => {
 // 后台列表
 exports.list = async (ctx, next) => {
   const categories = await Category.find({})
-  ctx.redirect('/admin/category_list', {
+  await ctx.render('pages/category_list', {
     title: '分类的列表页面',
     categories
   })

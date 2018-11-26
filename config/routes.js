@@ -16,7 +16,8 @@ module.exports = router => {
   // 后台的分类管理页面
   router.get('/admin/category', User.signinRequired, User.adminRequired, Category.show)
   router.post('/admin/category', User.signinRequired, User.adminRequired, Category.new)
-  router.post('/admin/category/list', User.signinRequired, User.adminRequired, Category.list)
+  router.get('/admin/category/list', User.signinRequired, User.adminRequired, Category.list)
+  router.get('/admin/category/update/:_id', User.signinRequired, User.adminRequired, Category.show)
   // 进入微信消息中间件
   router.get('/wx-hear', Wechat.hear)
   router.post('/wx-hear', Wechat.hear)
