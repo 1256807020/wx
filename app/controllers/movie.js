@@ -4,11 +4,13 @@ const _ = require('lodash')
 const Category = mongoose.model('Category')
 exports.show = async (ctx, next) => {
   const { _id } = ctx.params
+  console.log({ _id })
   let movie = {}
   if (_id) {
     movie = await Movie.findOne({ _id })
   }
   let categories = await Movie.find({})
+  console.log(categories)
   await ctx.render('pages/movie_admin', {
     title: '后台分类录入页面',
     movie,
@@ -18,19 +20,24 @@ exports.show = async (ctx, next) => {
 // 持久化
 exports.new = async (ctx, next) => {
   // ctx.request.body.fields所有字段
-  const movieData = ctx.request.body.fields || {}
+  const movieData = ctx.request.body || {}
+  console.log(ctx.request)
   let movie
   if (movieData._id) {
     movie = await Movie.findOne({ _id: movieData._id })
+    console.log(movie)
   }
   // 关联分类id
   const categoryId = movieData.categoryId
-  const categoryName = movieData.category
+  const categoryName = movieData.categoryName
+  console.log(categoryId, categoryName)
   let category
   if (categoryId) {
     category = await Category.findOne({ _id: categoryId })
+    console.log(category)
   } else if (categoryName) {
     category = new Category({ name: categoryName })
+    console.log(category)
     await category.save()
   }
 
@@ -42,10 +49,11 @@ exports.new = async (ctx, next) => {
     // 以防止id相同
     delete movieData._id
     movieData.category = category._id
-    movie = new Movie({ movieData })
+    movie = new Movie(movieData)
   }
   // 让分类中也存在电影数据
   category = await Category.findOne({ _id: category._id })
+  console.log(category)
   if (category) {
     category.movies = category.movies || []
     category.movies.push(movie._id)
@@ -56,7 +64,8 @@ exports.new = async (ctx, next) => {
 }
 // 后台列表
 exports.list = async (ctx, next) => {
-  const movies = await Category.find({}).populate('category', 'name')
+  const movies = await Movie.find({}).populate('category', 'name')
+  console.log(movies)
   await ctx.render('pages/movie_list', {
     title: '电影的列表页面',
     movies
